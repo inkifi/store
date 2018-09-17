@@ -1,4 +1,9 @@
-#switcher-store {float: left;}
+#switcher-store {
+	float: left;
+	// 2018-09-17
+	// I disable the arrow's reverting on its activation (it replicates the publicdesire.com's behaviour).
+	.action.toggle.active:after {content: '\e622';}
+}
 .flag-icon {
 	// 2018-03-11 I need `!important` for the mobile version.
 	vertical-align: top !important;
