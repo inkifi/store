@@ -1,6 +1,7 @@
 #switcher-store {
 	float: left; // 2018-09-17 Other top links will be positioned at right.
 	font-size: 12px;
+	letter-spacing: .07em;
 	text-transform: uppercase;
 	.action.toggle {
 		// 2018-09-17 It places the arrow at the vertical's middle of the text line.
@@ -12,6 +13,7 @@
 	}
 	div.flag-icon {
 		display: inline-block;
+		height: 15px; width: 26px;
 		// 2018-03-11 I need `!important` for the mobile version.
 		vertical-align: baseline;//top !important;
 		// 2018-03-11
@@ -20,14 +22,21 @@
 		// and it is not possible can not make it `inline`, because it will break the flag's appearance,
 		// so I set `display: inline-block` to the country's name.
 		& + strong {display: inline-block;}
-		#switcher-store-trigger & {line-height: 24px;}
-		.switcher-dropdown & {line-height: 22px;}
 	}
-	.currency-item {line-height: 1em;}
 	.currency-name {display: inline-block;}
-	.switcher-dropdown li {
-		text-align: left;
-		.currency-name {font-weight: bold;}
+	.switcher-dropdown {
+		min-width: 180px;
+		padding: 10px;
+		li {
+			text-align: left;
+			> * {line-height: initial;}
+			div.flag-icon {float: left;}
+			.inkifi-currency {
+				margin-left: 30px;
+				.currency-name {font-size: 13px; font-weight: bold; line-height: 18px;}
+				.currency-subtitle {font-size: 10px; line-height: 18px;}
+			}
+		}
 	}
 	#switcher-store-trigger {
 		&::after {float: right !important;}	// 2018-03-11 I need `!important` for the mobile version.

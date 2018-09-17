@@ -14,11 +14,12 @@ class Switcher extends _P {
 	/**
 	 * 2018-09-17
 	 * @param S $s
+	 * @param bool $title [optional]
 	 * @return string
 	 */
-	final function cur(S $s) {$c = $s->getDefaultCurrency(); /** @var C $c */ return df_cc_n(
-		df_tag('span', 'currency-item currency-name', df_currency_name($c))
-		,df_tag('div', 'currency-line', df_cc_n(
+	final function cur(S $s, $title = false) {$c = $s->getDefaultCurrency(); /** @var C $c */ return df_cc_n(
+		$title ? null : df_tag('span', 'currency-item currency-name', df_currency_name($c))
+		,df_tag('div', 'currency-subtitle', df_cc_n(
 			df_tag('span', 'currency-item currency-symbol', $c->getCurrencySymbol())
 			,df_tag('span', 'currency-item currency-code', $c->getCode())
 		))

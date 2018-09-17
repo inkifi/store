@@ -18,7 +18,7 @@
 					 tabindex='0'
 				>
 					<?= df_flag_tag($s->getCode(), null, 'div') ?>
-					<strong><?= $block->cur($s) ?></strong>
+					<strong><?= $block->cur($s, true) ?></strong>
 				</div>
 			<?php endif; ?>
         <?php endforeach; ?>
@@ -28,7 +28,9 @@
 					<li class='switcher-option'>
 						<a data-post='<?= $block->post($s) ?>' href='#'>
 							<?= df_flag_tag($s->getCode(), null, 'div') ?>
-							<?= $block->cur($s) ?>
+							<div class='inkifi-currency'>
+								<?= $block->cur($s) ?>
+							</div>
 						</a>
 					</li>
 				<?php endif; ?>
