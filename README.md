@@ -1,4 +1,4 @@
-A custom store module for [inkifi.com](https://frugue.com).
+A custom store module for [inkifi.com](https://inkifi.com).
 
 ## How to install
 ```

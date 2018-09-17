@@ -3,5 +3,11 @@
 	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
     xsi:noNamespaceSchemaLocation='urn:magento:framework:Module/etc/module.xsd'
 >
-	<module name='Inkifi_Store' setup_version='0.0.1'/>
+	<module name='Inkifi_Store' setup_version='0.0.1'>
+		<sequence>
+			<module name='Magento_Theme'/>
+			<module name='Infortis_Base'/>
+			<module name='Inkifi_Core'/>
+		</sequence>
+	</module>
 </config>

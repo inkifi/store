@@ -1,0 +1,14 @@
+<?xml version='1.0'?>
+<page 
+	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+	xsi:noNamespaceSchemaLocation='urn:magento:framework:View/Layout/etc/page_configuration.xsd'
+>
+	<head><css src='Inkifi_Store::main.css'/></head>
+	<referenceBlock name='account-links'>
+		<block
+			class='Inkifi\Store\Block\Switcher'
+			name='inkifi_store_switcher'
+			template='Inkifi_Store::switcher.phtml'
+		/>
+	</referenceBlock>
+</page>
