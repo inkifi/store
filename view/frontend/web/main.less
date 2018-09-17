@@ -15,7 +15,7 @@
 		display: inline-block;
 		height: 15px; width: 26px;
 		// 2018-03-11 I need `!important` for the mobile version.
-		vertical-align: baseline;//top !important;
+		vertical-align: text-top;
 		// 2018-03-11
 		// I need it to vertically align a flag with the country's name.
 		// The `display: inline-block` rule is already applied to the `.flag-icon` span,
@@ -23,7 +23,6 @@
 		// so I set `display: inline-block` to the country's name.
 		& + strong {display: inline-block;}
 	}
-	.currency-name {display: inline-block;}
 	.switcher-dropdown {
 		min-width: 180px;
 		padding: 10px;
@@ -31,6 +30,10 @@
 			text-align: left;
 			> * {line-height: initial;}
 			> a:hover {color: inherit;}
+			> a {
+				&:hover {color: inherit;}
+				overflow: hidden; width: 100%;  // 2018-09-17 For IE
+			}
 			div.flag-icon {float: left; margin-top: 2px;}
 			.inkifi-currency {
 				margin-left: 30px;
@@ -39,8 +42,6 @@
 			}
 		}
 	}
-	#switcher-store-trigger {
-		&::after {float: right !important;}	// 2018-03-11 I need `!important` for the mobile version.
-		.flag-icon + strong {margin-top: 1px;}
-	}
+	// 2018-03-11 I need `!important` for the mobile version.
+	#switcher-store-trigger::after {float: right !important;}
 }

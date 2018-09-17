@@ -18,7 +18,9 @@ class Switcher extends _P {
 	 * @return string
 	 */
 	final function cur(S $s, $title = false) {$c = $s->getDefaultCurrency(); /** @var C $c */ return df_cc_n(
-		$title ? null : df_tag('span', 'currency-item currency-name', df_currency_name($c))
+		$title ? null : df_tag('div', 'currency-item currency-name',
+			df_trim_text_right(df_currency_name($c), ' Sterling')
+		)
 		,df_tag('div', 'currency-subtitle', df_cc_n(
 			df_tag('span', 'currency-item currency-symbol', $c->getCurrencySymbol())
 			,df_tag('span', 'currency-item currency-code', $c->getCode())
