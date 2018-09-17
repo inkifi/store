@@ -44,4 +44,12 @@
 	}
 	// 2018-03-11 I need `!important` for the mobile version.
 	#switcher-store-trigger::after {float: right !important;}
+	// 2018-09-18 For the mobile mode
+	#header-nav & {
+		line-height: 50px;
+		margin-left: 10px;
+		z-index: 4; * {z-index: 4;}
+		.action.toggle:after {margin-top: 13px;}
+	}
 }
+#header-nav #mainmenu2 li:first-child {margin-top: -0.5em !important;}
