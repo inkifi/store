@@ -1,14 +1,16 @@
 #switcher-store {
 	float: left; // 2018-09-17 Other top links will be positioned at right.
-	.action.toggle.active:after {
+	.action.toggle {
+		// 2018-09-17 It places the arrow at the vertical's middle of the text line.
+		&:after {margin-top: 0.5em;}
 		// 2018-09-17
 		// I disable the arrow's reverting on its activation
 		// (it replicates the publicdesire.com's behaviour).
-		content: '\e622';
-		margin-top: 0.5em; // 2018-09-17 It places the arrow at the vertical's middle of the text line.
+		&.active:after {content: '\e622';}
 	}
 }
-.flag-icon {
+div.flag-icon {
+	display: inline-block;
 	// 2018-03-11 I need `!important` for the mobile version.
 	vertical-align: top !important;
 	// 2018-03-11
