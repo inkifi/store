@@ -1,4 +1,5 @@
 <?php /** @var \Inkifi\Store\Block\Switcher $block */
+	use Magento\Directory\Model\Currency as C;
 	use Magento\Store\Model\Store as S;
 	echo df_flag_link();
 	$currentId = df_store_id(); /** @var int $currentId */
@@ -17,7 +18,7 @@
 					 tabindex='0'
 				>
 					<?= df_flag_tag($s->getCode(), null, 'div') ?>
-					<strong><span><?= $block->name($s) ?></span></strong>
+					<strong><?= $block->cur($s) ?></strong>
 				</div>
 			<?php endif; ?>
         <?php endforeach; ?>
@@ -27,7 +28,7 @@
 					<li class='switcher-option'>
 						<a data-post='<?= $block->post($s) ?>' href='#'>
 							<?= df_flag_tag($s->getCode(), null, 'div') ?>
-							<span><?= $block->name($s) ?></span>
+							<?= $block->cur($s) ?>
 						</a>
 					</li>
 				<?php endif; ?>

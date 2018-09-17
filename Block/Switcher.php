@@ -1,5 +1,6 @@
 <?php
 namespace Inkifi\Store\Block;
+use Magento\Directory\Model\Currency as C;
 use Magento\Framework\View\Element\Template as _P;
 use Magento\Store\Api\StoreResolverInterface as IStoreResolver;
 use Magento\Store\Model\Store as S;
@@ -15,7 +16,13 @@ class Switcher extends _P {
 	 * @param S $s
 	 * @return string
 	 */
-	final function name(S $s) {return $this->escapeHtml(dftr($s->getCode(), $this->map()));}
+	final function cur(S $s) {$c = $s->getDefaultCurrency(); /** @var C $c */ return df_cc_n(
+		df_tag('span', 'currency-item currency-name', df_currency_name($c))
+		,df_tag('div', 'currency-line', df_cc_n(
+			df_tag('span', 'currency-item currency-symbol', $c->getCurrencySymbol())
+			,df_tag('span', 'currency-item currency-code', $c->getCode())
+		))
+	);}
 
 	/**
 	 * 2018-09-17
@@ -25,13 +32,4 @@ class Switcher extends _P {
 	final function post(S $s) {return df_post_h()->getPostData(
 		$this->getUrl('stores/store/switch'), [IStoreResolver::PARAM_NAME => $s->getCode()]
 	);}
-
-	/**
-	 * 2018-09-17
-	 * @used-by name()
-	 * @return array(string => array(string => string))
-	 */
-	private function map() {return dfc($this, function() {return dftr(df_lang(), [
-		'en' => ['in' => 'India', 'uk' => 'United Kingdom', 'us' => 'United States']
-	]);});}
 }
