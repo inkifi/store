@@ -1,6 +1,6 @@
 {
 	"name": "inkifi/store"
-	,"version": "0.0.3"
+	,"version": "1.0.0"
 	,"description": "A custom store module for inkifi.com"
 	,"type": "magento2-module"
 	,"homepage": "https://github.com/inkifi/store"
