@@ -51,5 +51,9 @@
 		z-index: 4; * {z-index: 4;}
 		.action.toggle:after {margin-top: 13px;}
 	}
+	// 2018-09-18
+	// «The currency drop down shows x2 in the mobile menu»
+	// https://github.com/inkifi/store/issues/2
+	a[href='#header-account'].skip-active ~ #header-account & {display: none;}
 }
 #header-nav #mainmenu2 li:first-child {margin-top: -0.5em !important;}
