@@ -3,6 +3,7 @@ A custom store module for [inkifi.com](https://inkifi.com).
 ## How to install
 ```
 bin/magento maintenance:enable
+composer clear-cache
 composer require inkifi/store:*
 bin/magento setup:upgrade
 rm -rf var/di var/generation generated/code && bin/magento setup:di:compile
@@ -15,6 +16,7 @@ bin/magento cache:enable
 ```
 bin/magento maintenance:enable
 rm -rf composer.lock
+composer clear-cache
 composer update inkifi/store
 bin/magento setup:upgrade
 rm -rf var/di var/generation generated/code && bin/magento setup:di:compile
